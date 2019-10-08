@@ -1,0 +1,28 @@
+{
+  "blogs": [
+    {
+      "id": 1,
+      "title": "json-server",
+      "author": "Eli"
+    }
+  ],
+  "comments": [
+    {
+      "id": 1,
+      "body": "pbbbbbbbt",
+      "postId": 1
+    }
+  ],
+  "users": [
+    {
+      "username": "",
+      "password": "",
+      "id": 1
+    },
+    {
+      "username": "Hello",
+      "password": "hellohello",
+      "id": 2
+    }
+  ]
+}
