@@ -2,23 +2,18 @@ import React from 'react';
 import { BrowserRouter as Router, Switch, Route, Link } from 'react-router-dom'
 import ReactDOM from 'react-dom';
 import './index.css';
-import App from './App';
-import {loggedIn} from './common/LoggedIn';
+import Login from './login/Login';
+import {CalendarPage} from './calendar/Calendar';
 import * as serviceWorker from './serviceWorker';
+
+export const calendarPath = "/calendar";
+export const loginPath = "/";
 
 const routing = (
   <Router>
     <div>
-      <ul>
-        <li>
-          <Link to="/">Home</Link>
-        </li>
-        <li>
-          <Link to="/loggedIn"></Link>
-        </li>
-      </ul>
-      <Route exact path="/" component={App}/>
-      <Route path="/loggedIn" component={loggedIn}/>
+      <Route exact path={loginPath} component={Login}/>
+      <Route path={calendarPath} component={CalendarPage}/>
     </div>
   </Router>
 )

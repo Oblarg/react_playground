@@ -1,8 +1,9 @@
 import React, { useState } from 'react';
-import {Redirect} from 'react-router-dom'
-import './App.css';
+import {Redirect} from 'react-router-dom';
+import './Login.css';
+import {calendarPath} from '../index';
 import TextField from '@material-ui/core/TextField';
-import Button from '@material-ui/core/Button'
+import Button from '@material-ui/core/Button';
 import Axios from 'axios';
 
 
@@ -38,7 +39,7 @@ const App = () => {
   }
 
   if (loggedIn) {
-    return <Redirect to='/loggedIn'/>
+    return <Redirect to={calendarPath}/>
   }
 
   return (
