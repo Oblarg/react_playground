@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import {Redirect} from 'react-router-dom'
 import './App.css';
 import TextField from '@material-ui/core/TextField';
 import Button from '@material-ui/core/Button'
@@ -9,6 +10,7 @@ const App = () => {
 
   let usernameRef = React.createRef<HTMLInputElement>();
   let pwRef = React.createRef<HTMLInputElement>();
+  let [loggedIn, setLoggedIn] = useState(false);
 
   const login = () => {
     let username = "";
@@ -27,9 +29,16 @@ const App = () => {
       }
     )
       .then(
-        (response)=>console.log(response)
+        (response)=>{
+          console.log(response);
+          setLoggedIn(true);
+        }
       )
       .catch((error)=>console.log(error));
+  }
+
+  if (loggedIn) {
+    return <Redirect to='/loggedIn'/>
   }
 
   return (
