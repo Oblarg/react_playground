@@ -4,12 +4,19 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import Login from './login/Login';
 import {CalendarPage} from './calendar/Calendar';
+import {NavigationDrawer} from './drawer/Drawer';
 import * as serviceWorker from './serviceWorker';
-
 export const calendarPath = "/calendar";
 export const loginPath = "/";
 
 const routing = (
+  const [showNavigationDrawer, setShowNavigationDrawer] = useState(false);
+  const openNavigationDrawer = () => {
+    setShowNavigationDrawer(true);
+  }
+  const closeNavigationDrawer = () => {
+    setShowNavigationDrawer(false);
+  }
   <Router>
     <div>
       <Route exact path={loginPath} component={Login}/>
