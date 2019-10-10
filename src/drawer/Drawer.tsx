@@ -2,8 +2,12 @@ import React, { useState } from 'react';
 import Drawer from '@material-ui/core/Drawer';
 import List from '@material-ui/core/List';
 import ListItem from '@material-ui/core/ListItem';
-import { BrowserRouter as Router, Link } from 'react-router-dom'
+import { Link as RouterLink, LinkProps as RouterLinkProps } from 'react-router-dom'
 import Button from '@material-ui/core/Button'
+
+const Link = React.forwardRef<HTMLAnchorElement, RouterLinkProps>((props, ref) => (
+  <RouterLink innerRef={ref} {...props} />
+));
 
 interface NavigationDrawerProps {
   open: boolean;
@@ -23,16 +27,14 @@ export const NavigationDrawer = React.memo<NavigationDrawerProps>((props) => {
       onClose={props.onClose}
       className="list"
     >
-        <List>
-          {props.items.map((linkElement) =>
-            <ListItem key={linkElement.name}>
-              <Link to={linkElement.path}>
-                <Button>
-                  {linkElement.name}
-                </Button>
-              </Link>
-            </ListItem>)}
-        </List>
+      <List>
+        {props.items.map((linkElement) =>
+          <ListItem key={linkElement.name}>
+            <Button component={Link} to={linkElement.path}>
+              {linkElement.name}
+            </Button>
+          </ListItem>)}
+      </List>
       <Button
         onClick={props.onClose}
       >
