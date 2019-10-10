@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { Redirect } from 'react-router-dom';
 import './Login.css';
 import { calendarPath } from '../index';
-import TextField from '@material-ui/core/TextField';
+import { TextField } from 'formik-material-ui';
 import Button from '@material-ui/core/Button';
 import Axios from 'axios';
 import { Formik, Form, Field, ErrorMessage } from 'formik';
@@ -12,16 +12,18 @@ const App = () => {
     <div>
       <Formik
         initialValues={{ username: '', password: '' }}
-        validate={(values) => {
-          let errors = { username: '', password: '' };
-          if (!values.username) {
-            errors.username = 'Username required';
-          }
-          if (!values.password) {
-            errors.password = 'Password required';
-          }
-          return errors;
-        }}
+        // validate={(values) => {
+        //   let errors = { username: '', password: '' };
+        //   if (values.username =='') {
+        //     errors.username = 'Username required';
+        //   }
+        //   if (values.password == '') {
+        //     errors.password = 'Password required';
+        //   }
+        //   if (errors !== {username: '', password: ''}) {
+        //     return errors;
+        //   }
+        // }}
         onSubmit={
           (values, { setSubmitting }) => {
             setTimeout(() => {
@@ -31,28 +33,33 @@ const App = () => {
                   username: values.username,
                   password: values.password
                 }
+              ).then(
+                (response) => {
+                  console.log(response);
+                }
               )
+                .catch((error) => console.log(error));
               setSubmitting(false);
-            }, 500)
+            }, 500);
           }
         }
       >
         {({ isSubmitting }) => (
           <Form>
             <div>
-            <Field type='username' name='email' />
-            <ErrorMessage name='username' component='div' />
+              <Field name='username' label='Username' component={TextField} />
             </div>
             <div>
-            <Field type='password' name='password'/>
-            <ErrorMessage name='password' component='div'/> 
+              <Field name='password' label='Password' component={TextField} />
             </div>
-            <Button
-              type='submit'
-              disabled={isSubmitting}
-            >
-              Submit
+            <div>
+              <Button
+                type='submit'
+                disabled={isSubmitting}
+              >
+                Submit
             </Button>
+            </div>
           </Form>
         )}
       </Formik>
