@@ -28,9 +28,10 @@ export const CalendarPage = () => {
           Calendar
       </title>
       </div>
-      <div>
+      <div className="calendar-container">
         <Calendar
           onClickDay={openEventDialog}
+          className="calendar"
         />
       </div>
     </div>

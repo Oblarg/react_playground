@@ -7,12 +7,14 @@ import { BrowserRouter as Router, Route } from 'react-router-dom';
 import { CalendarPage } from './calendar/Calendar';
 import { NavPane } from './navpane/NavPane';
 import { MapPage } from './map/Map';
+import { CameraCapture } from './camera/Camera';
 import './index.css';
 
 
 export const calendarPath = "/calendar";
 export const loginPath = "/";
-export const mapPath = "/map"
+export const mapPath = "/map";
+export const camPath = "/camera";
 
 const Routing = () => {
   const [showNavigationDrawer, setShowNavigationDrawer] = useState(false);
@@ -38,13 +40,15 @@ const Routing = () => {
           onClose={closeNavigationDrawer}
           items={[{ path: loginPath, name: 'Login' },
           { path: calendarPath, name: 'Calendar' },
-          { path: mapPath, name:'Map'}
+          { path: mapPath, name: 'Map'},
+          { path: camPath, name: 'Camera'}
         ]}
         />
         <div>
           <Route exact path={loginPath} component={Login} />
           <Route path={calendarPath} component={CalendarPage} />
           <Route path={mapPath} component={MapPage}/>
+          <Route path={camPath} component={CameraCapture}/>
         </div>
       </Router>
     </div>

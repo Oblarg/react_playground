@@ -1,7 +1,7 @@
 import React from 'react';
 import Modal from '@material-ui/core/Modal'
 import Button from '@material-ui/core/Button'
-import './eventDialog.css'
+import './styles.css'
 import {Fade} from "@material-ui/core";
 
 interface EventDialogProps {
