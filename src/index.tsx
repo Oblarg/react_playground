@@ -5,7 +5,7 @@ import React, { useState } from 'react';
 import ReactDOM from 'react-dom';
 import { BrowserRouter as Router, Route } from 'react-router-dom';
 import { CalendarPage } from './calendar/Calendar';
-import { NavigationDrawer } from './drawer/Drawer';
+import { NavPane } from './navpane/NavPane';
 import { MapPage } from './map/Map';
 import './index.css';
 
@@ -33,7 +33,7 @@ const Routing = () => {
         </Button>
       </div>
       <Router>
-        <NavigationDrawer
+        <NavPane
           open={showNavigationDrawer}
           onClose={closeNavigationDrawer}
           items={[{ path: loginPath, name: 'Login' },
