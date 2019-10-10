@@ -1,0 +1,12 @@
+.modal{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.background{
+    background-color: #ffffff;
+    border: 2px solid;
+    box-shadow: none;
+    padding: 2px 4px 3px;
+}
+
