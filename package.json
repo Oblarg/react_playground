@@ -13,6 +13,7 @@
     "axios": "^0.19.0",
     "bootstrap": "^4.3.1",
     "concurrently": "^5.0.0",
+    "formik": "^1.5.8",
     "json-server": "^0.15.1",
     "leaflet": "^1.5.1",
     "material-ui": "^0.20.2",

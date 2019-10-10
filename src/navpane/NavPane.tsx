@@ -4,6 +4,7 @@ import List from '@material-ui/core/List';
 import ListItem from '@material-ui/core/ListItem';
 import { Link as RouterLink, LinkProps as RouterLinkProps } from 'react-router-dom'
 import Button from '@material-ui/core/Button'
+import './NavPane.css';
 
 const Link = React.forwardRef<HTMLAnchorElement, RouterLinkProps>((props, ref) => (
   <RouterLink innerRef={ref} {...props} />
