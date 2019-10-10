@@ -21,6 +21,7 @@ export const NavigationDrawer = React.memo<NavigationDrawerProps>((props) => {
     <Drawer
       open={props.open}
       onClose={props.onClose}
+      className="list"
     >
         <List>
           {props.items.map((linkElement) =>
