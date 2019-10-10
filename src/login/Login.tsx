@@ -59,6 +59,7 @@ const App = () => {
               id="password"
               label="Password:"
               className="loginInput"
+              type="password"
               inputRef={pwRef}
             />
           </div>

@@ -43,6 +43,11 @@
       "username": "blah",
       "password": "blah",
       "id": 6
+    },
+    {
+      "username": "hey",
+      "password": "password",
+      "id": 7
     }
   ]
 }
