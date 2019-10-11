@@ -4627,6 +4627,11 @@ form-data@~2.3.2:
     combined-stream "^1.0.6"
     mime-types "^2.1.12"
 
+formik-material-ui@0.0.22:
+  version "0.0.22"
+  resolved "https://registry.yarnpkg.com/formik-material-ui/-/formik-material-ui-0.0.22.tgz#52b0fa6eed5f11e1fecf2bd6f2bcb41eb627ce7c"
+  integrity sha512-ETfGBGJp1yA5C6QKTMibMtsBEomKRqZ45yAFCN8dYoTdD/toE4ETdCL1DJZZvJj5ZWQfqDaTJY+qhXP7OUM/gw==
+
 formik@^1.5.8:
   version "1.5.8"
   resolved "https://registry.yarnpkg.com/formik/-/formik-1.5.8.tgz#eee8cd345effe46839bc748c7f920486f12f14b0"
@@ -9284,6 +9289,11 @@ react-transition-group@^4.0.0, react-transition-group@^4.3.0:
     dom-helpers "^5.0.1"
     loose-envify "^1.4.0"
     prop-types "^15.6.2"
+
+react-webcam@^3.1.1:
+  version "3.1.1"
+  resolved "https://registry.yarnpkg.com/react-webcam/-/react-webcam-3.1.1.tgz#0c73b3f6d3bbf2bf986adaa4446e9c770809f020"
+  integrity sha512-ByfSevEyq05yExOUUEe0m7QW7l8CNFxuRzqPKwMVsvXjP+FtaCNZuNviQD9Q5qHJ0wpbM+VXO8/OUjBp0UIE2w==
 
 react@^16.10.2:
   version "16.10.2"
