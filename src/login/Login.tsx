@@ -6,24 +6,25 @@ import { TextField } from 'formik-material-ui';
 import Button from '@material-ui/core/Button';
 import Axios from 'axios';
 import { Formik, Form, Field, ErrorMessage } from 'formik';
+import './Login.css'
 
 const App = () => {
   return (
-    <div>
+    <div
+      className='loginForm'
+    >
       <Formik
         initialValues={{ username: '', password: '' }}
-        // validate={(values) => {
-        //   let errors = { username: '', password: '' };
-        //   if (values.username =='') {
-        //     errors.username = 'Username required';
-        //   }
-        //   if (values.password == '') {
-        //     errors.password = 'Password required';
-        //   }
-        //   if (errors !== {username: '', password: ''}) {
-        //     return errors;
-        //   }
-        // }}
+        validate={(values) => {
+          let errors:{username?:string, password?:string} = {};
+          if (values.username =='') {
+            errors.username = 'Username required';
+          }
+          if (values.password == '') {
+            errors.password = 'Password required';
+          }
+          return(errors);
+        }}
         onSubmit={
           (values, { setSubmitting }) => {
             setTimeout(() => {
