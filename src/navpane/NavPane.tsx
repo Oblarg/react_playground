@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import Drawer from '@material-ui/core/Drawer';
 import List from '@material-ui/core/List';
 import ListItem from '@material-ui/core/ListItem';
@@ -30,7 +30,7 @@ export const NavPane = React.memo<NavPaneProps>((props) => {
       <List>
         {props.items.map((linkElement) =>
           <ListItem key={linkElement.name}>
-            <Button component={Link} to={linkElement.path}>
+            <Button component={Link} to={linkElement.path} onClick={props.onClose}>
               {linkElement.name}
             </Button>
           </ListItem>)}
@@ -43,4 +43,4 @@ export const NavPane = React.memo<NavPaneProps>((props) => {
     </Drawer>
 
   )
-})
+});
